@@ -1,0 +1,29 @@
+program teste;
+
+uses TUI,crt;
+
+var m:TMenu;
+    s:TTui;
+    i:byte;
+begin
+        clrscr;
+        m := TMenu.Create;
+        m.AddItem(2,2,'alfa');
+        m.AddItem(10,10,'bravo');
+        m.AddItem(20,20,'charlie');
+        m.SetColor(yellow, blue,black,lightgray);
+        writeln(m.RunMenu(true));
+        m.free;
+
+        s :=  TTui.create;
+
+        for i:=0 to 100 do
+        begin
+                delay(20);
+                s.progressbar(22,22,13,0,100,i);
+        end;
+        s.progressbar(22,22,13,0,100,50);
+
+        writeln(s.ReadText(15,15,10,2));
+        s.free;
+end.
