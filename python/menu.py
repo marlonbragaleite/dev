@@ -44,9 +44,9 @@ def runmenu_inside(win,  active = 1, acceptesc=False):
                 cor = 1
             else:
                 cor = 2
-            win.addstr(" < ", curses.color_pair(cor))
+            win.addstr("", curses.color_pair(cor))
             win.addstr(menutext[i], curses.color_pair(cor))
-            win.addstr(" > ", curses.color_pair(cor))
+            win.addstr("", curses.color_pair(cor))
         key = win.getch()
         if key ==  curses.KEY_UP or key == curses.KEY_LEFT:
             active = active - 1
